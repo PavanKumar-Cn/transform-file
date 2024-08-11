@@ -1,0 +1,28 @@
+server:
+  port: 8092
+  servlet:
+    context-path: /api
+
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: pavanreddy555y@gmail.com
+    password: utty mvmm vavi jtzb
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+#  mail:
+#    host: smtp.gmail.com
+#    port: 587
+#    username: mymail@gmail.com
+#    password: mypassword
+#    protocol: smtp
+#    tls: true
+#    properties.mail.smtp:
+#      auth: true
+#      starttls.enable: true
+#      ssl.trust: smtp.gmail.com
