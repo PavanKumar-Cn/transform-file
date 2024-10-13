@@ -8,6 +8,8 @@ import org.apache.poi.ss.usermodel.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -214,10 +216,10 @@ public class ExcelToJsonService {
     }
 
 
-    public Map<String, List<ObjectNode>> getMultipleSheetsDataWithMap(MultipartFile file, List<SheetMapDto> sheetDtos) throws IOException {
+    public Map<String, List<ObjectNode>> getMultipleSheetsDataWithMap(File file, List<SheetMapDto> sheetDtos) throws IOException {
         Map<String, List<ObjectNode>> result = new HashMap<>();
 
-        try (Workbook workbook = WorkbookFactory.create(file.getInputStream())) {
+        try (Workbook workbook = WorkbookFactory.create(new FileInputStream(file))) {
             for (SheetMapDto config : sheetDtos) {
                 String sheetName = config.getSheetName();
                 Map<String, String> fieldMappings = config.getFieldMappings();
