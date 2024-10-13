@@ -4,15 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Map;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class SheetJsonDto {
-    private MultipartFile file;
-    private List<SheetDto> sheetDtos;
+public class FileNameHeadersResponse {
+    private String fileName;
+    private Map<String, List<String>> fileHeaders;
+
 }
